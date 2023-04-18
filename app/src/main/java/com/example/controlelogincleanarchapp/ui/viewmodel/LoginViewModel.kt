@@ -1,11 +1,11 @@
 package com.example.controlelogincleanarchapp.ui.viewmodel
 
-import com.example.controlelogincleanarchapp.data.model.Profile
-import com.example.controlelogincleanarchapp.data.repository.UserRepository
+import com.example.controlelogincleanarchapp.domain.model.Profile
+import com.example.data.repository.UserRepository
 import javax.inject.Inject
 
 class LoginViewModel @Inject constructor(
-  private val userRepository: UserRepository
+  private val userRepository: com.example.data.repository.UserRepository
 ) {
   
   fun login(email: String, password: String): Boolean {

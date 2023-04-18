@@ -1,6 +1,6 @@
 package com.example.controlelogincleanarchapp.di
 
-import com.example.controlelogincleanarchapp.data.mock.mockProgrammingLanguageList
+import com.example.controlelogincleanarchapp.domain.mock.mockProgrammingLanguageList
 import com.example.controlelogincleanarchapp.ui.adapter.ProgrammingLanguageAdapter
 import dagger.Module
 import dagger.Provides
