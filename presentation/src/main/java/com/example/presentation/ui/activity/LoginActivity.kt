@@ -3,6 +3,7 @@ package com.example.presentation.ui.activity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.presentation.controller.LoginController
 import com.example.presentation.databinding.ActivityLoginBinding
 import com.example.presentation.ui.adapter.ProgrammingLanguageAdapter
 import com.example.presentation.ui.viewmodel.LoginViewModel
@@ -14,6 +15,9 @@ class LoginActivity : AppCompatActivity() {
     
     @Inject
     lateinit var binding: ActivityLoginBinding
+    
+    @Inject
+    lateinit var loginController: LoginController
     
     @Inject
     lateinit var programmingLanguageAdapter: ProgrammingLanguageAdapter
