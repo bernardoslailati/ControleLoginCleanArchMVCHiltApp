@@ -1,5 +1,7 @@
 package com.example.data.di
 
+import com.example.data.service.LoginService
+import com.example.data.service.authentication.FirebaseAuthenticator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,18 +16,18 @@ object LoginServiceModule {
 
     @BackendLoginService
     @Provides
-    fun provideLoginRetrofitService(): com.example.data.service.LoginService {
+    fun provideLoginRetrofitService(): LoginService {
         return Retrofit.Builder()
             .baseUrl("https://my-backend.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(com.example.data.service.LoginService::class.java)
+            .create(LoginService::class.java)
     }
     
     @FirebaseLoginService
     @Provides
-    fun provideLoginFirebaseService(): com.example.data.service.LoginService {
-        return com.example.data.service.authentication.FirebaseAuthenticator.provideLoginService()
+    fun provideLoginFirebaseService(): LoginService {
+        return FirebaseAuthenticator.provideLoginService()
     }
     
 }

@@ -1,7 +1,6 @@
 package com.example.data.datasource
 
 import android.content.Context
-import android.widget.Toast
 import com.example.data.mock.mockProfileLocal
 import com.example.data.model.ProfileLocalModel
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -12,7 +11,6 @@ class UserLocalDataSourceImpl @Inject constructor(
 ): UserLocalDataSource {
     
     override fun getProfile(): ProfileLocalModel {
-        Toast.makeText(context, "$mockProfileLocal\n\n$context", Toast.LENGTH_LONG).show()
         return mockProfileLocal
     }
     
