@@ -36,14 +36,17 @@ class LoginActivity : AppCompatActivity() {
         with(binding) {
             rvProgrammingLanguages.adapter = programmingLanguageAdapter
             
+            loginController.showProfile()
+            
             btnLogin.setOnClickListener {
 //                Toast.makeText(baseContext, "${loginViewModel.getProfile()}", Toast.LENGTH_LONG).show()
-
-                val isLoggedIn = loginViewModel.login(
-                    email = tietEmail.text.toString(),
-                    password = tietPassword.text.toString()
-                )
-                Toast.makeText(baseContext, "isLoggedIn? $isLoggedIn", Toast.LENGTH_LONG).show()
+//
+//                val isLoggedIn = loginViewModel.login(
+//                    email = tietEmail.text.toString(),
+//                    password = tietPassword.text.toString()
+//                )
+//                Toast.makeText(baseContext, "isLoggedIn? $isLoggedIn", Toast.LENGTH_LONG).show()
+                loginController.login()
             }
         }
     }

@@ -9,15 +9,15 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.qualifiers.ActivityContext
 
 @Module
 @InstallIn(ActivityComponent::class)
-object ProgrammingLanguageModule {
+object PresentationModule {
     
     @Provides
     fun provideActivityLoginBinding(
-        @ApplicationContext context: Context
+        @ActivityContext context: Context
     ): ActivityLoginBinding {
         return ActivityLoginBinding.inflate(LayoutInflater.from(context))
     }

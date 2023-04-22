@@ -14,7 +14,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object LoginUseCaseModule {
     
-    @Singleton
     @Provides
     fun providesLoginUseCase(
         userRepository: UserRepository
@@ -22,7 +21,6 @@ object LoginUseCaseModule {
         return LoginUseCase(userRepository)
     }
     
-    @Singleton
     @Provides
     fun providesGetProfileUseCase(
         userRepository: UserRepository
