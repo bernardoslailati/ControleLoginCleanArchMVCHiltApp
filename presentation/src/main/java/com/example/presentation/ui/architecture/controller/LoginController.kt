@@ -1,4 +1,4 @@
-package com.example.presentation.controller
+package com.example.presentation.ui.architecture.controller
 
 import android.widget.Toast
 import com.example.domain.usecase.GetProfileUseCase
@@ -20,8 +20,8 @@ class LoginController @Inject constructor(
     
     fun login() {
         val isLoggedIn = loginUseCase.execute(
-            email = loginActivityMainBinding.tietEmail.toString(),
-            password = loginActivityMainBinding.tietPassword.toString(),
+            email = loginActivityMainBinding.tietEmail.text.toString(),
+            password = loginActivityMainBinding.tietPassword.text.toString(),
         )
         
         Toast.makeText(
