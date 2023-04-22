@@ -14,9 +14,6 @@ import javax.inject.Inject
 class LoginActivity : AppCompatActivity() {
     
     @Inject
-    lateinit var binding: ActivityLoginBinding
-    
-    @Inject
     lateinit var loginController: LoginController
     
     @Inject
@@ -27,13 +24,13 @@ class LoginActivity : AppCompatActivity() {
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(binding.root)
+        setContentView(loginController.loginActivityMainBinding.root)
         
         setupView()
     }
     
     private fun setupView() {
-        with(binding) {
+        with(loginController.loginActivityMainBinding) {
             rvProgrammingLanguages.adapter = programmingLanguageAdapter
             
             loginController.showProfile()
